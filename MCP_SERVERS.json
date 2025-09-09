@@ -1,0 +1,183 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
+      },
+      "description": "GitHub repository management and automation",
+      "recommended_for": ["all_projects"],
+      "setup_instructions": [
+        "1. Create GitHub Personal Access Token with repo permissions",
+        "2. Add token to environment variables or Claude Code settings",
+        "3. Test with: gh auth status"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"],
+      "description": "File system operations for project directories",
+      "recommended_for": ["all_projects"],
+      "setup_instructions": [
+        "1. Replace /path/to/allowed/directory with your project root",
+        "2. Ensure Claude Code has necessary file permissions",
+        "3. Test with basic file operations"
+      ]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "postgresql://user:password@localhost:5432/dbname"
+      },
+      "description": "PostgreSQL database operations and queries",
+      "recommended_for": ["database_projects", "web_applications"],
+      "setup_instructions": [
+        "1. Set up PostgreSQL database",
+        "2. Configure connection string in environment",
+        "3. Test connection with sample query"
+      ]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "/path/to/database.db"],
+      "description": "SQLite database operations for local development",
+      "recommended_for": ["prototypes", "local_development"],
+      "setup_instructions": [
+        "1. Create or locate SQLite database file",
+        "2. Update path in configuration",
+        "3. Verify database schema and permissions"
+      ]
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "description": "Docker container management and operations",
+      "recommended_for": ["containerized_applications", "microservices"],
+      "setup_instructions": [
+        "1. Ensure Docker is installed and running",
+        "2. Verify Docker daemon accessibility",
+        "3. Test with: docker ps"
+      ]
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-kubernetes"],
+      "env": {
+        "KUBECONFIG": "/path/to/kubeconfig"
+      },
+      "description": "Kubernetes cluster management and deployment",
+      "recommended_for": ["cloud_native_applications", "enterprise_deployments"],
+      "setup_instructions": [
+        "1. Configure kubectl with cluster access",
+        "2. Set KUBECONFIG environment variable",
+        "3. Test with: kubectl get nodes"
+      ]
+    },
+    "web-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-web-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
+      },
+      "description": "Web search capabilities for research and documentation",
+      "recommended_for": ["research_projects", "documentation"],
+      "setup_instructions": [
+        "1. Obtain Brave Search API key",
+        "2. Configure API key in environment",
+        "3. Test with sample search query"
+      ]
+    },
+    "anthropic": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-anthropic"],
+      "env": {
+        "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY"
+      },
+      "description": "Anthropic Claude API integration for advanced AI operations",
+      "recommended_for": ["ai_integration_projects", "advanced_automation"],
+      "setup_instructions": [
+        "1. Obtain Anthropic API key from console",
+        "2. Configure API key securely",
+        "3. Test with simple API call"
+      ]
+    }
+  },
+  "project_type_recommendations": {
+    "web_applications": [
+      "github",
+      "filesystem", 
+      "postgres",
+      "docker"
+    ],
+    "api_services": [
+      "github",
+      "filesystem",
+      "postgres",
+      "docker",
+      "kubernetes"
+    ],
+    "data_processing": [
+      "github",
+      "filesystem",
+      "postgres",
+      "sqlite",
+      "docker"
+    ],
+    "machine_learning": [
+      "github",
+      "filesystem",
+      "anthropic",
+      "web-search",
+      "docker"
+    ],
+    "infrastructure": [
+      "github",
+      "filesystem",
+      "docker",
+      "kubernetes"
+    ],
+    "research_projects": [
+      "github",
+      "filesystem",
+      "web-search",
+      "anthropic"
+    ]
+  },
+  "setup_instructions": {
+    "organization_wide": [
+      "1. Copy this configuration to your global Claude Code settings",
+      "2. Replace placeholder values with actual credentials",
+      "3. Store sensitive credentials in secure environment variables",
+      "4. Test each MCP server individually before using in projects",
+      "5. Update project-specific CLAUDE.md with relevant MCP servers"
+    ],
+    "security_considerations": [
+      "Never commit API keys or credentials to version control",
+      "Use environment variables or secure credential management",
+      "Regularly rotate API keys and access tokens",
+      "Limit MCP server permissions to minimum required scope",
+      "Monitor MCP server usage for security anomalies"
+    ]
+  },
+  "troubleshooting": {
+    "common_issues": {
+      "connection_failed": [
+        "Verify network connectivity and firewall settings",
+        "Check API key validity and permissions",
+        "Ensure MCP server is properly installed and accessible"
+      ],
+      "permission_denied": [
+        "Verify file system permissions for filesystem MCP server",
+        "Check database user permissions for database MCP servers",
+        "Ensure proper authentication for cloud service MCP servers"
+      ],
+      "timeout_errors": [
+        "Increase timeout settings in Claude Code configuration",
+        "Check network latency and stability",
+        "Verify MCP server responsiveness"
+      ]
+    }
+  }
+}

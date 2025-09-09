@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "HaldisB2B-DevFoundation",
+    "type": "template",
+    "description": "Organizational development foundation template"
+  },
+  "specification": {
+    "methodology": "spec-driven-development",
+    "phases": ["specify", "plan", "tasks", "implement"],
+    "templates": {
+      "specification": ".github/ISSUE_TEMPLATE/01-specification.md",
+      "planning": ".spec-kit/templates/planning.md",
+      "tasks": ".spec-kit/templates/tasks.md"
+    }
+  },
+  "development": {
+    "ai_assistant": "claude-code",
+    "configuration_file": "CLAUDE.md",
+    "philosophy_document": "DEVELOPMENT_PHILOSOPHY.md",
+    "research_document": "RESEARCH_FINDINGS.md"
+  },
+  "quality": {
+    "testing": {
+      "unit_coverage_threshold": 80,
+      "integration_required": true,
+      "performance_required": false,
+      "security_required": true
+    },
+    "code_quality": {
+      "linting": true,
+      "type_checking": true,
+      "formatting": true,
+      "security_scanning": true
+    }
+  },
+  "workflow": {
+    "issue_templates": [
+      {
+        "name": "specification",
+        "label": "specification",
+        "template": ".github/ISSUE_TEMPLATE/01-specification.md"
+      },
+      {
+        "name": "planning",
+        "label": "planning",
+        "template": ".github/ISSUE_TEMPLATE/02-planning.md"
+      },
+      {
+        "name": "task",
+        "label": "task",
+        "template": ".github/ISSUE_TEMPLATE/03-task.md"
+      }
+    ],
+    "automation": {
+      "spec_validation": true,
+      "task_generation": true,
+      "documentation_sync": true
+    }
+  },
+  "integration": {
+    "mcp_servers": "MCP_SERVERS.json",
+    "github_actions": ".github/workflows/spec-kit-integration.yml",
+    "claude_code": "CLAUDE.md"
+  },
+  "organization": {
+    "name": "HaldisB2B",
+    "standards": {
+      "security_first": true,
+      "research_driven": true,
+      "ai_assisted": true,
+      "specification_driven": true
+    },
+    "preferences": {
+      "languages": ["rust", "typescript", "python", "go"],
+      "frameworks": ["next.js", "sveltekit", "fastapi", "axum"],
+      "infrastructure": ["kubernetes", "docker", "terraform"]
+    }
+  }
+}
