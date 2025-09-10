@@ -4,11 +4,11 @@
 
 This template repository provides a standardized foundation for all HaldisB2B projects, incorporating:
 
-- 🔧 **Spec-Kit Integration**: GitHub's specification-driven development toolkit
-- 🤖 **Claude Code Ready**: Pre-configured for AI-assisted development
-- 📋 **Standardized Workflows**: Consistent CI/CD and development practices
-- 🔒 **Security Standards**: Enterprise-grade security configurations
-- 📊 **MCP Server Integration**: Model Context Protocol server configurations
+- **Spec-Kit Integration**: GitHub's specification-driven development toolkit
+- **Claude Code Ready**: Pre-configured for AI-assisted development
+- **Standardized Workflows**: Consistent CI/CD and development practices
+- **Security Standards**: Enterprise-grade security configurations
+- **MCP Server Integration**: Model Context Protocol server configurations
 
 ## Quick Start
 
