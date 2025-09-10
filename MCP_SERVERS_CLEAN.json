@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
+      },
+      "description": "GitHub repository management and automation",
+      "status": "✅ Core - Essential for all projects",
+      "setup_verified": true
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/peter"],
+      "description": "File system operations for project directories",
+      "status": "✅ Core - Essential for all projects",
+      "setup_verified": true
+    },
+    "web-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-web-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
+      },
+      "description": "Web search capabilities for research",
+      "status": "🔍 Optional - Requires Brave API key",
+      "setup_verified": false
+    },
+    "nodejs-sandbox": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-nodejs-sandbox"],
+      "description": "Node.js sandbox for safe code execution",
+      "status": "⚡ Advanced - For development tasks",
+      "setup_verified": true
+    }
+  },
+  "recommended_by_project_type": {
+    "all_projects": ["github", "filesystem"],
+    "web_development": ["github", "filesystem", "nodejs-sandbox"],
+    "research_projects": ["github", "filesystem", "web-search"],
+    "data_processing": ["github", "filesystem", "nodejs-sandbox"]
+  },
+  "problematic_servers_to_avoid": {
+    "code-to-tree": "Package not found in npm registry",
+    "mobile-mcp": "Requires Android SDK installation",
+    "manim": "Requires complex Python/LaTeX dependencies",
+    "desktop-commander": "Requires additional system permissions"
+  },
+  "setup_instructions": {
+    "quick_setup": [
+      "1. Copy this configuration to Claude Code settings",
+      "2. Replace YOUR_GITHUB_TOKEN with actual GitHub PAT",
+      "3. Test core servers (github, filesystem) first",
+      "4. Add optional servers as needed"
+    ],
+    "github_token_setup": [
+      "1. Go to GitHub Settings > Developer settings > Personal access tokens",
+      "2. Create new token with 'repo' permissions",
+      "3. Copy token and replace YOUR_GITHUB_TOKEN",
+      "4. Test with: claude mcp test github"
+    ]
+  }
+}
